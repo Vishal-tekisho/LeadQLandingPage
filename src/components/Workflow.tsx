@@ -3,7 +3,7 @@ import { Radio, Search, Mail, Calendar, CheckCircle } from 'lucide-react';
 
 export default function Workflow() {
   return (
-    <section className="relative z-10 py-24 px-4 bg-white/[0.05]">
+    <section id="workflow" className="relative z-10 py-24 px-4 bg-white/[0.05]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <motion.h2
@@ -28,14 +28,14 @@ export default function Workflow() {
 
         <div className="relative max-w-6xl mx-auto">
           {/* Desktop: Horizontal Flow */}
-          <div className="hidden lg:grid lg:grid-cols-3 gap-12 items-start">
+          <div className="hidden lg:grid lg:grid-cols-3 gap-8 items-start">
             {/* Step 1: The Lead */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="relative"
+              className="relative z-10"
             >
               <div className="glass-strong rounded-2xl p-8 hover:scale-105 transition-transform">
                 <div className="flex justify-center mb-6">
@@ -80,7 +80,7 @@ export default function Workflow() {
             </motion.div>
 
             {/* Connector Line 1 */}
-            <div className="absolute left-[calc(33.333%-3rem)] top-28 w-[6rem] h-0.5">
+            <div className="absolute left-[calc(33.333%-3rem)] top-28 w-[6rem] h-0.5 pointer-events-none z-0">
               <motion.div
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
@@ -110,7 +110,7 @@ export default function Workflow() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
+              className="relative z-10"
             >
               <div className="glass-strong rounded-2xl p-8 hover:scale-105 transition-transform bg-gradient-to-br from-amber-500/5 to-amber-600/10 border border-amber-500/20">
                 <h3 className="text-2xl font-display font-bold mb-6 text-center">
@@ -236,7 +236,7 @@ export default function Workflow() {
             </motion.div>
 
             {/* Connector Line 2 */}
-            <div className="absolute right-[calc(33.333%-3rem)] top-28 w-[6rem] h-0.5">
+            <div className="absolute right-[calc(33.333%-3rem)] top-28 w-[6rem] h-0.5 pointer-events-none z-0">
               <motion.div
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
@@ -267,7 +267,7 @@ export default function Workflow() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="relative"
+              className="relative z-10"
             >
               <div className="glass-strong rounded-2xl p-8 hover:scale-105 transition-transform">
                 <div className="flex justify-center mb-6">

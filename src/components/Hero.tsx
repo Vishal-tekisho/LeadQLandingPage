@@ -35,11 +35,7 @@ export default function Hero() {
           animate="visible"
           className="flex flex-col items-center"
         >
-          {/* <motion.div variants={itemVariants} className="mb-8">
-            <span className="glass px-4 py-2 rounded-full text-sm font-medium text-cyan-300 border border-cyan-400/30">
-              Autonomous CRM Platform
-            </span>
-          </motion.div> */}
+          
 
           <motion.h1
             variants={itemVariants}
@@ -58,7 +54,7 @@ export default function Hero() {
 
           <motion.p
             variants={itemVariants}
-            className="text-lg md:text-xl text-gray-400 max-w-2xl mb-10"
+            className="text-lg md:text-xl text-gray-400 max-w-2xl"
           >
             Supercharge productivity with AI-powered automation and integrations built for the next generation of teams.
           </motion.p>
