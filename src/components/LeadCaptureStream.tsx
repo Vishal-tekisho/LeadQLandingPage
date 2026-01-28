@@ -262,7 +262,7 @@ export default function LeadCaptureStream() {
   const currentLead = fallbackCards[currentLeadIndex];
 
   return (
-    <section className="relative z-10 py-24 px-4 overflow-hidden">
+    <section id="lead-capture" className="relative z-10 py-24 px-4 overflow-hidden">
       <style>{`
         @keyframes scanLine {
           0%, 100% { top: 0; opacity: 1; }

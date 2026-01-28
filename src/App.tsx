@@ -1,17 +1,16 @@
-import { Sparkles, Bot, DollarSign, Mail, Briefcase, GitBranch, LayoutDashboard, HelpCircle, PenLine } from 'lucide-react';
+import { Sparkles, Bot, DollarSign, Mail, Briefcase, LayoutDashboard, HelpCircle, PenLine, ScanLine, UserPlus, Calendar } from 'lucide-react';
 import { NavBar } from './components/ui/tubelight-navbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import UseCases from './components/UseCases';
 import LeadCaptureStream from './components/LeadCaptureStream';
-import Agents from './components/Agents';
-import Workflow from './components/Workflow';
+import ProfileEnrichment from './components/ProfileResearch';
 import DashboardPreview from './components/DashboardPreview';
+import BookingsMeeting from './components/BookingsMeeting';
 import EmailDraftAnimation from './components/EmailDraftAnimation';
+import Agents from './components/Agents';
 import Pricing from './components/Pricing';
-import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
-import FinalCTA from './components/FinalCTA';
 import Contact from './components/Contact';
 import ScrollProgress from './components/ScrollProgress';
 import ScrollToTop from './components/ScrollToTop';
@@ -22,10 +21,12 @@ function App() {
   const navItems = [
     { name: 'Features', url: '#features', icon: Sparkles },
     { name: 'Use Cases', url: '#use-cases', icon: Briefcase },
-    { name: 'AI Agents', url: '#agents', icon: Bot },
-    { name: 'Workflow', url: '#workflow', icon: GitBranch },
+    { name: 'Lead Capture', url: '#lead-capture', icon: ScanLine },
+    { name: 'Enrichment', url: '#profile-enrichment', icon: UserPlus },
     { name: 'Dashboard', url: '#dashboard', icon: LayoutDashboard },
+    { name: 'Bookings', url: '#bookings-meeting', icon: Calendar },
     { name: 'Email Draft', url: '#email-draft', icon: PenLine },
+    { name: 'AI Agents', url: '#agents', icon: Bot },
     { name: 'Pricing', url: '#pricing', icon: DollarSign },
     { name: 'FAQ', url: '#faq', icon: HelpCircle },
     { name: 'Contact', url: '#contact', icon: Mail }
@@ -38,21 +39,45 @@ function App() {
       <SkipToContent />
       <ScrollProgress />
       <NavBar items={navItems} />
+      
+      {/* 1. Hero Section */}
       <Hero />
+      
+      {/* 2. Features */}
       <Features />
+      
+      {/* 3. Use Cases */}
       <UseCases />
+      
+      {/* 4. Lead Capture Stream */}
       <LeadCaptureStream />
-      <Agents />
-      <Workflow />
+      
+      {/* 5. Profile Enrichment (Placeholder) */}
+      <ProfileEnrichment />
+      
+      {/* 6. Living Dashboard Preview */}
       <DashboardPreview />
+      
+      {/* 7. Bookings & Meeting Diarization (Placeholder) */}
+      <BookingsMeeting />
+      
+      {/* 8. Email Draft Animation */}
       <section id="email-draft">
         <EmailDraftAnimation />
       </section>
+      
+      {/* 9. AI Agents */}
+      <Agents />
+      
+      {/* 10. Pricing */}
       <Pricing />
-      <Testimonials />
+      
+      {/* 11. FAQ */}
       <FAQ />
-      <FinalCTA />
+      
+      {/* 12. Get in Touch / Contact */}
       <Contact />
+      
       <ScrollToTop />
       <CookieConsent />
 

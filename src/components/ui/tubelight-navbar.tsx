@@ -90,7 +90,7 @@ export function NavBar({ items, className }: NavBarProps) {
                 href={item.url}
                 onClick={() => setActiveTab(item.name)}
                 className={cn(
-                  "relative cursor-pointer text-base font-semibold px-6 py-3 rounded-full transition-colors",
+                  "relative cursor-pointer text-base font-semibold px-6 py-3 rounded-full transition-colors whitespace-nowrap",
                   "text-gray-300 hover:text-leadq-amber",
                   isActive && "bg-white/5 text-leadq-amber"
                 )}
