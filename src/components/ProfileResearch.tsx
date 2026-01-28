@@ -241,7 +241,7 @@ const ResearchVisualization = ({ stage, activeSources }: { stage: Stage; activeS
       
       <div className="text-center mb-4">
         <motion.div
-          animate={isResearching ? { rotate: 360 } : {}}
+
           transition={{ duration: 2, repeat: isResearching ? Infinity : 0, ease: 'linear' }}
           className="inline-block mb-2"
         >
@@ -392,19 +392,17 @@ const EnrichedCard = ({ profile, visibleFields }: { profile: EnrichedProfile; vi
 
   const isIdle = visibleFields.length === 0;
 
-  // Placeholder fields shown before research starts
+  // Compact placeholder fields shown before research starts (only 3 items)
   const placeholderFields = [
     { id: 'identity', icon: Shield, label: 'Verified Identity', value: '—', color: 'text-gray-500' },
     { id: 'role', icon: Briefcase, label: 'Role', value: '—', color: 'text-gray-500' },
     { id: 'email', icon: Mail, label: 'Email', value: '—', color: 'text-gray-500' },
-    { id: 'location', icon: MapPin, label: 'Location', value: '—', color: 'text-gray-500' },
-    { id: 'linkedin', icon: Link2, label: 'LinkedIn', value: '—', color: 'text-gray-500' },
-    { id: 'experience', icon: Zap, label: 'Experience', value: '—', color: 'text-gray-500' },
   ];
 
   return (
     <motion.div
       variants={slideInRight}
+      layout
       className="glass-strong rounded-xl p-4 md:p-6 relative overflow-hidden"
     >
       <AISparkle className="-top-1 -right-1" />
@@ -429,36 +427,41 @@ const EnrichedCard = ({ profile, visibleFields }: { profile: EnrichedProfile; vi
       </div>
       
       <div className="space-y-3">
-        {/* Show placeholder fields when idle */}
-        {isIdle && (
-          <div className="space-y-3">
-            {placeholderFields.map((field) => {
-              const Icon = field.icon;
-              return (
-                <div
-                  key={field.id}
-                  className="flex items-start gap-3 p-2 rounded-lg bg-white/5 opacity-50"
-                >
-                  <div className={`p-1.5 rounded-md bg-white/10 ${field.color}`}>
-                    <Icon className="w-4 h-4" />
+        {/* Show compact placeholder fields when idle */}
+        <AnimatePresence mode="wait">
+          {isIdle && (
+            <motion.div 
+              key="placeholder"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="space-y-3"
+            >
+              {placeholderFields.map((field) => {
+                const Icon = field.icon;
+                return (
+                  <div
+                    key={field.id}
+                    className="flex items-start gap-3 p-2 rounded-lg bg-white/5 opacity-50"
+                  >
+                    <div className={`p-1.5 rounded-md bg-white/10 ${field.color}`}>
+                      <Icon className="w-4 h-4" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs text-gray-500">{field.label}</p>
+                      <p className="text-sm text-gray-600">{field.value}</p>
+                    </div>
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-xs text-gray-500">{field.label}</p>
-                    <p className="text-sm text-gray-600">{field.value}</p>
-                  </div>
-                </div>
-              );
-            })}
-            {/* Placeholder summary */}
-            <div className="mt-4 p-3 rounded-lg bg-white/5 border border-white/10 opacity-50">
-              <div className="flex items-center gap-2 mb-2">
-                <FileText className="w-4 h-4 text-gray-500" />
-                <span className="text-xs font-medium text-gray-500">AI-Generated Summary</span>
+                );
+              })}
+              {/* Compact placeholder message */}
+              <div className="mt-2 p-2 rounded-lg bg-white/5 border border-dashed border-white/10 opacity-50 text-center">
+                <p className="text-xs text-gray-500">Start research to enrich profile...</p>
               </div>
-              <p className="text-sm text-gray-600">Click "Start Research Demo" to generate profile...</p>
-            </div>
-          </div>
-        )}
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Show actual fields when research is in progress or complete */}
         <AnimatePresence mode="popLayout">

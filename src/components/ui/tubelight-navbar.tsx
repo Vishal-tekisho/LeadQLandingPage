@@ -67,7 +67,7 @@ export function NavBar({ items, className }: NavBarProps) {
       )}
     >
       {/* Login & Sign Up Buttons */}
-      <div className="hidden lg:flex items-center gap-4 fixed top-6 right-6 z-[101]">
+      <div className="hidden lg:flex items-center gap-4 fixed top-6 right-1 z-[101]">
         <button className="px-7 py-3.5 text-base text-white underline underline-offset-4 hover:text-leadq-amber transition-colors rounded-lg focus:outline-none focus:ring-2 focus:ring-leadq-amber focus:ring-offset-2 focus:ring-offset-black whitespace-nowrap">
           Login
         </button>

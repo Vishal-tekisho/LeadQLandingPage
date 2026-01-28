@@ -32,9 +32,9 @@ const agents = [
     description:
       'Tap to capture. Instantly digitizes physical business cards into CRM data.',
     icon: Smartphone,
-    color: 'amber',
-    highlight: true,
-    badge: 'Hardware Included',
+    // color: 'amber',
+    // highlight: true,
+    badge: 'Hardware Dependent',
   },
   {
     id: 4,

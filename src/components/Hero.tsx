@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 import EnergyBeam from './ui/energy-beam';
 
+// Toggle to enable/disable the energy beam animation
+const ENABLE_ENERGY_BEAM = false;
+
 export default function Hero() {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -24,9 +27,11 @@ export default function Hero() {
 
   return (
     <section id="main-content" className="relative z-10 min-h-screen flex items-center justify-center overflow-hidden px-4 py-20">
-      <div className="absolute inset-0 z-0">
-        <EnergyBeam className="opacity-60" />
-      </div>
+      {ENABLE_ENERGY_BEAM && (
+        <div className="absolute inset-0 z-0">
+          <EnergyBeam className="opacity-60" />
+        </div>
+      )}
 
       <div className="relative z-20 w-full max-w-4xl mx-auto text-center">
         <motion.div
