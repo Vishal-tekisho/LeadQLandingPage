@@ -59,7 +59,7 @@ const Features = () => {
   };
 
   return (
-    <section id="features" className="relative z-10 py-24 px-4 border-t border-white/10">
+    <section id="features" className="relative z-10 py-24 px-4">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

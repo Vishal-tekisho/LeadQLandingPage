@@ -1,18 +1,18 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useCallback } from 'react';
-import { 
-  Calendar, 
-  Mic, 
-  Webhook, 
-  UserPlus, 
-  Building2, 
-  User, 
-  Link2, 
-  Radio, 
-  Camera, 
-  FileText, 
-  CheckCircle2, 
-  Clock, 
+import {
+  Calendar,
+  Mic,
+  Webhook,
+  UserPlus,
+  Building2,
+  User,
+  Link2,
+  Radio,
+  Camera,
+  FileText,
+  CheckCircle2,
+  Clock,
   ChevronRight,
   Sparkles,
   Image,
@@ -22,14 +22,14 @@ import {
   RotateCcw
 } from 'lucide-react';
 
-type AnimationStage = 
-  | 'idle' 
-  | 'booking-webhook' 
-  | 'booking-offline' 
-  | 'context-linking' 
-  | 'live-transcription' 
-  | 'proof-upload' 
-  | 'ai-summary' 
+type AnimationStage =
+  | 'idle'
+  | 'booking-webhook'
+  | 'booking-offline'
+  | 'context-linking'
+  | 'live-transcription'
+  | 'proof-upload'
+  | 'ai-summary'
   | 'dashboard';
 
 interface Meeting {
@@ -84,7 +84,7 @@ const PulsingDot = ({ color = 'cyan' }: { color?: 'cyan' | 'amber' | 'green' }) 
     amber: 'bg-amber-400',
     green: 'bg-green-400'
   };
-  
+
   return (
     <span className="relative flex h-2 w-2">
       <span className={`animate-ping absolute inline-flex h-full w-full rounded-full ${colorClasses[color]} opacity-75`} />
@@ -99,9 +99,8 @@ const StageIndicator = ({ stages, currentStage }: { stages: string[]; currentSta
     {stages.map((_, index) => (
       <motion.div
         key={index}
-        className={`h-1.5 rounded-full transition-all duration-300 ${
-          index <= currentStage ? 'bg-gradient-to-r from-cyan-400 to-amber-400' : 'bg-white/20'
-        }`}
+        className={`h-1.5 rounded-full transition-all duration-300 ${index <= currentStage ? 'bg-gradient-to-r from-cyan-400 to-amber-400' : 'bg-white/20'
+          }`}
         animate={{ width: index === currentStage ? 24 : 8 }}
         transition={{ duration: 0.3 }}
       />
@@ -203,7 +202,7 @@ export default function BookingsMeeting() {
   // No auto-start - animations are triggered on demand via play button
 
   return (
-    <section id="bookings-meeting" className="relative z-10 py-24 px-4 border-t border-white/10 bg-white/[0.02]">
+    <section id="bookings-meeting" className="relative z-10 py-24 px-4 bg-white/[0.02]">
       {/* Background ambient effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
@@ -224,14 +223,14 @@ export default function BookingsMeeting() {
               Intelligent Meeting Module
             </span>
           </div>
-          
+
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
             Bookings & Meeting{' '}
             <span className="bg-gradient-to-r from-cyan-400 to-amber-400 bg-clip-text text-transparent">
               Intelligence
             </span>
           </h2>
-          
+
           <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
             Seamless scheduling, real-time transcription with speaker diarization, and AI-powered meeting summaries
           </p>
@@ -394,44 +393,44 @@ export default function BookingsMeeting() {
                       className="bg-white/5 rounded-xl p-4 border border-amber-500/20"
                     >
                       <div className="space-y-3">
-                        <motion.div 
+                        <motion.div
                           initial={{ opacity: 0, x: -10 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: 0.3 }}
                           className="flex items-center gap-3"
                         >
                           <User className="w-4 h-4 text-gray-400" />
-                          <input 
-                            type="text" 
-                            value="Alex Rivera" 
+                          <input
+                            type="text"
+                            value="Alex Rivera"
                             readOnly
                             className="flex-1 bg-white/5 rounded-lg px-3 py-2 text-white text-sm border border-white/10"
                           />
                         </motion.div>
-                        <motion.div 
+                        <motion.div
                           initial={{ opacity: 0, x: -10 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: 0.5 }}
                           className="flex items-center gap-3"
                         >
                           <Building2 className="w-4 h-4 text-gray-400" />
-                          <input 
-                            type="text" 
-                            value="InnovateLabs Inc." 
+                          <input
+                            type="text"
+                            value="InnovateLabs Inc."
                             readOnly
                             className="flex-1 bg-white/5 rounded-lg px-3 py-2 text-white text-sm border border-white/10"
                           />
                         </motion.div>
-                        <motion.div 
+                        <motion.div
                           initial={{ opacity: 0, x: -10 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: 0.7 }}
                           className="flex items-center gap-3"
                         >
                           <Calendar className="w-4 h-4 text-gray-400" />
-                          <input 
-                            type="text" 
-                            value="Tech Conference 2026" 
+                          <input
+                            type="text"
+                            value="Tech Conference 2026"
                             readOnly
                             className="flex-1 bg-white/5 rounded-lg px-3 py-2 text-white text-sm border border-white/10"
                           />
@@ -604,21 +603,19 @@ export default function BookingsMeeting() {
                         <motion.div
                           key={index}
                           initial={{ opacity: 0, x: -20 }}
-                          animate={{ 
+                          animate={{
                             opacity: transcriptLines.length > index ? 1 : 0,
                             x: transcriptLines.length > index ? 0 : -20
                           }}
                           className="flex items-start gap-3"
                         >
-                          <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white ${
-                            line.color === 'cyan' ? 'bg-cyan-500' : 'bg-amber-500'
-                          }`}>
+                          <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white ${line.color === 'cyan' ? 'bg-cyan-500' : 'bg-amber-500'
+                            }`}>
                             {line.speaker.split(' ').map(n => n[0]).join('')}
                           </div>
                           <div className="flex-1 text-left">
-                            <p className={`text-sm font-medium ${
-                              line.color === 'cyan' ? 'text-cyan-400' : 'text-amber-400'
-                            }`}>
+                            <p className={`text-sm font-medium ${line.color === 'cyan' ? 'text-cyan-400' : 'text-amber-400'
+                              }`}>
                               {line.speaker}
                             </p>
                             <p className="text-gray-300">{line.text}</p>
@@ -818,22 +815,20 @@ export default function BookingsMeeting() {
                     <div className="flex items-center justify-center gap-2 bg-white/5 rounded-lg p-1 max-w-md mx-auto">
                       <button
                         onClick={() => setDashboardView('upcoming')}
-                        className={`flex-1 px-4 py-2 rounded-md text-sm font-medium transition-all ${
-                          dashboardView === 'upcoming'
+                        className={`flex-1 px-4 py-2 rounded-md text-sm font-medium transition-all ${dashboardView === 'upcoming'
                             ? 'bg-cyan-500 text-white'
                             : 'text-gray-400 hover:text-white'
-                        }`}
+                          }`}
                       >
                         <Clock className="w-4 h-4 inline mr-2" />
                         Upcoming (3 Days)
                       </button>
                       <button
                         onClick={() => setDashboardView('completed')}
-                        className={`flex-1 px-4 py-2 rounded-md text-sm font-medium transition-all ${
-                          dashboardView === 'completed'
+                        className={`flex-1 px-4 py-2 rounded-md text-sm font-medium transition-all ${dashboardView === 'completed'
                             ? 'bg-green-500 text-white'
                             : 'text-gray-400 hover:text-white'
-                        }`}
+                          }`}
                       >
                         <CheckCircle2 className="w-4 h-4 inline mr-2" />
                         Completed
@@ -862,11 +857,10 @@ export default function BookingsMeeting() {
                               className="bg-white/5 rounded-lg p-4 border border-white/10 hover:border-white/20 transition-all cursor-pointer"
                             >
                               <div className="flex items-center gap-3">
-                                <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm ${
-                                  meeting.status === 'upcoming'
+                                <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm ${meeting.status === 'upcoming'
                                     ? 'bg-gradient-to-br from-cyan-400 to-blue-500'
                                     : 'bg-gradient-to-br from-green-400 to-emerald-500'
-                                }`}>
+                                  }`}>
                                   {meeting.avatar}
                                 </div>
                                 <div className="flex-1 text-left">

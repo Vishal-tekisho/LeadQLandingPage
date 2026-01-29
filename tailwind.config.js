@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         leadq: {
-          bg: '#030712',
+          bg: '#000000',
           cyan: '#06b6d4',
           purple: '#7c3aed',
           amber: '#f59e0b',

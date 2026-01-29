@@ -153,24 +153,23 @@ const ScanLine = () => (
 // Stage indicator component
 const StageIndicator = ({ currentStage, stages }: { currentStage: Stage; stages: { key: Stage; label: string; icon: React.ElementType }[] }) => {
   const currentIndex = stages.findIndex(s => s.key === currentStage);
-  
+
   return (
     <div className="flex items-center justify-center gap-2 md:gap-4 flex-wrap mb-8">
       {stages.map((stage, index) => {
         const Icon = stage.icon;
         const isActive = index === currentIndex;
         const isComplete = index < currentIndex;
-        
+
         return (
           <div key={stage.key} className="flex items-center gap-2">
             <motion.div
-              className={`flex items-center gap-1.5 px-2 md:px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
-                isActive
+              className={`flex items-center gap-1.5 px-2 md:px-3 py-1.5 rounded-full text-xs font-medium transition-all ${isActive
                   ? 'bg-amber-500/20 text-amber-400 border border-amber-500/40'
                   : isComplete
-                  ? 'bg-green-500/20 text-green-400 border border-green-500/40'
-                  : 'bg-white/5 text-gray-500 border border-white/10'
-              }`}
+                    ? 'bg-green-500/20 text-green-400 border border-green-500/40'
+                    : 'bg-white/5 text-gray-500 border border-white/10'
+                }`}
               animate={isActive ? { scale: [1, 1.05, 1] } : {}}
               transition={{ duration: 1, repeat: isActive ? Infinity : 0 }}
             >
@@ -202,7 +201,7 @@ const InputCard = ({ profile, isActive }: { profile: ProfileData; isActive: bool
       </div>
       <span className="text-xs text-gray-500 ml-2">Input Profile</span>
     </div>
-    
+
     <div className="space-y-3">
       <div className="flex items-center gap-3">
         <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center">
@@ -213,7 +212,7 @@ const InputCard = ({ profile, isActive }: { profile: ProfileData; isActive: bool
           <p className="text-xs text-gray-400">Basic contact info</p>
         </div>
       </div>
-      
+
       <div className="space-y-2 text-sm">
         <div className="flex items-center gap-2 text-gray-400">
           <Building2 className="w-4 h-4 text-amber-400/60" />
@@ -231,14 +230,14 @@ const InputCard = ({ profile, isActive }: { profile: ProfileData; isActive: bool
 // Research visualization component
 const ResearchVisualization = ({ stage, activeSources }: { stage: Stage; activeSources: string[] }) => {
   const isResearching = stage === 'researching';
-  
+
   return (
     <motion.div
       variants={itemVariants}
       className="glass rounded-xl p-4 md:p-6 relative overflow-hidden min-h-[200px] flex flex-col items-center justify-center"
     >
       <AISparkle className="-top-1 -right-1" />
-      
+
       <div className="text-center mb-4">
         <motion.div
 
@@ -248,25 +247,24 @@ const ResearchVisualization = ({ stage, activeSources }: { stage: Stage; activeS
           <Search className="w-8 h-8 text-amber-400" />
         </motion.div>
         <p className="text-sm text-gray-400">
-          {stage === 'idle' || stage === 'input' ? 'Ready to research' : 
-           stage === 'researching' ? 'Analyzing web signals...' :
-           stage === 'disambiguating' ? 'Disambiguating identity...' :
-           stage === 'enriching' ? 'Enriching profile...' :
-           'Research complete'}
+          {stage === 'idle' || stage === 'input' ? 'Ready to research' :
+            stage === 'researching' ? 'Analyzing web signals...' :
+              stage === 'disambiguating' ? 'Disambiguating identity...' :
+                stage === 'enriching' ? 'Enriching profile...' :
+                  'Research complete'}
         </p>
       </div>
-      
+
       <div className="flex items-center justify-center gap-4 md:gap-6">
         {WEB_SOURCES.map((source, index) => {
           const Icon = source.icon;
           const isActive = activeSources.includes(source.id);
-          
+
           return (
             <motion.div
               key={source.id}
-              className={`flex flex-col items-center gap-2 p-3 rounded-lg transition-all ${
-                isActive ? 'bg-white/10' : 'bg-white/5'
-              }`}
+              className={`flex flex-col items-center gap-2 p-3 rounded-lg transition-all ${isActive ? 'bg-white/10' : 'bg-white/5'
+                }`}
               animate={isActive ? { scale: [1, 1.1, 1] } : {}}
               transition={{ duration: 0.5, repeat: isActive ? Infinity : 0, delay: index * 0.2 }}
             >
@@ -289,7 +287,7 @@ const ResearchVisualization = ({ stage, activeSources }: { stage: Stage; activeS
           );
         })}
       </div>
-      
+
       {isResearching && (
         <div className="mt-4">
           <TypingIndicator />
@@ -309,13 +307,13 @@ const DisambiguationPanel = ({ candidates, selectedId }: { candidates: Candidate
       <Brain className="w-5 h-5 text-amber-400" />
       <span className="text-sm font-medium text-white">Smart Disambiguation</span>
     </div>
-    
+
     <div className="space-y-3">
       <AnimatePresence>
         {candidates.map((candidate) => {
           const isSelected = selectedId === candidate.id;
           const isRejected = selectedId !== null && !isSelected;
-          
+
           return (
             <motion.div
               key={candidate.id}
@@ -326,19 +324,17 @@ const DisambiguationPanel = ({ candidates, selectedId }: { candidates: Candidate
                 scale: isSelected ? 1.02 : 1,
               }}
               exit={{ opacity: 0, x: 20 }}
-              className={`p-3 rounded-lg border transition-all ${
-                isSelected
+              className={`p-3 rounded-lg border transition-all ${isSelected
                   ? 'bg-green-500/10 border-green-500/40'
                   : isRejected
-                  ? 'bg-red-500/5 border-red-500/20'
-                  : 'bg-white/5 border-white/10'
-              }`}
+                    ? 'bg-red-500/5 border-red-500/20'
+                    : 'bg-white/5 border-white/10'
+                }`}
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
-                    isSelected ? 'bg-green-500/20' : 'bg-white/10'
-                  }`}>
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center ${isSelected ? 'bg-green-500/20' : 'bg-white/10'
+                    }`}>
                     <User className={`w-4 h-4 ${isSelected ? 'text-green-400' : 'text-gray-400'}`} />
                   </div>
                   <div>
@@ -350,15 +346,14 @@ const DisambiguationPanel = ({ candidates, selectedId }: { candidates: Candidate
                     </p>
                   </div>
                 </div>
-                <div className={`text-xs font-medium px-2 py-1 rounded ${
-                  candidate.confidence > 80
+                <div className={`text-xs font-medium px-2 py-1 rounded ${candidate.confidence > 80
                     ? 'bg-green-500/20 text-green-400'
                     : 'bg-gray-500/20 text-gray-400'
-                }`}>
+                  }`}>
                   {candidate.confidence}%
                 </div>
               </div>
-              
+
               {isSelected && (
                 <motion.div
                   initial={{ opacity: 0, height: 0 }}
@@ -406,7 +401,7 @@ const EnrichedCard = ({ profile, visibleFields }: { profile: EnrichedProfile; vi
       className="glass-strong rounded-xl p-4 md:p-6 relative overflow-hidden"
     >
       <AISparkle className="-top-1 -right-1" />
-      
+
       <div className="flex items-center gap-2 mb-4">
         <div className="flex gap-1.5">
           <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
@@ -425,12 +420,12 @@ const EnrichedCard = ({ profile, visibleFields }: { profile: EnrichedProfile; vi
           </motion.div>
         )}
       </div>
-      
+
       <div className="space-y-3">
         {/* Show compact placeholder fields when idle */}
         <AnimatePresence mode="wait">
           {isIdle && (
-            <motion.div 
+            <motion.div
               key="placeholder"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -468,9 +463,9 @@ const EnrichedCard = ({ profile, visibleFields }: { profile: EnrichedProfile; vi
           {fields.map((field) => {
             const Icon = field.icon;
             const isVisible = visibleFields.includes(field.id);
-            
+
             if (!isVisible) return null;
-            
+
             return (
               <motion.div
                 key={field.id}
@@ -491,7 +486,7 @@ const EnrichedCard = ({ profile, visibleFields }: { profile: EnrichedProfile; vi
             );
           })}
         </AnimatePresence>
-        
+
         {visibleFields.includes('summary') && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -543,41 +538,41 @@ export default function ProfileResearch() {
 
   const startAnimation = useCallback(() => {
     if (isAnimating) return;
-    
+
     resetAnimation();
     setIsAnimating(true);
-    
+
     const timeouts: NodeJS.Timeout[] = [];
-    
+
     // Stage 1: Input (0ms)
     timeouts.push(setTimeout(() => setStage('input'), 500));
-    
+
     // Stage 2: Researching (1500ms)
     timeouts.push(setTimeout(() => setStage('researching'), 1500));
     timeouts.push(setTimeout(() => setActiveSources(['linkedin']), 2000));
     timeouts.push(setTimeout(() => setActiveSources(['linkedin', 'company']), 2500));
     timeouts.push(setTimeout(() => setActiveSources(['linkedin', 'company', 'web']), 3000));
-    
+
     // Stage 3: Disambiguating (4000ms)
     timeouts.push(setTimeout(() => setStage('disambiguating'), 4000));
     timeouts.push(setTimeout(() => setSelectedCandidateId(2), 5500));
-    
+
     // Stage 4: Enriching (6500ms)
     timeouts.push(setTimeout(() => setStage('enriching'), 6500));
-    
+
     const fieldOrder = ['identity', 'role', 'email', 'location', 'linkedin', 'experience', 'summary'];
     fieldOrder.forEach((field, index) => {
       timeouts.push(setTimeout(() => {
         setVisibleFields(prev => [...prev, field]);
       }, 7000 + index * 400));
     });
-    
+
     // Stage 5: Complete (10000ms)
     timeouts.push(setTimeout(() => {
       setStage('complete');
       setIsAnimating(false);
     }, 10000));
-    
+
     timeoutsRef.current = timeouts;
   }, [isAnimating, resetAnimation]);
 
@@ -589,13 +584,13 @@ export default function ProfileResearch() {
   }, [clearTimeouts]);
 
   return (
-    <section id="profile-research" className="relative z-10 py-16 md:py-24 px-4 border-t border-white/10 overflow-hidden">
+    <section id="profile-research" className="relative z-10 py-16 md:py-24 px-4 overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/10 rounded-full blur-[120px]" />
         <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-[100px]" />
       </div>
-      
+
       <div className="max-w-7xl mx-auto relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -608,14 +603,14 @@ export default function ProfileResearch() {
             <UserPlus className="w-4 h-4 text-amber-400" />
             <span className="text-sm text-amber-400 font-medium">AI-Powered Research</span>
           </div>
-          
+
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
             Profile{' '}
             <span className="bg-gradient-to-r from-amber-400 to-cyan-400 bg-clip-text text-transparent">
               Research
             </span>
           </h2>
-          
+
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-6">
             Transform minimal contact inputs into rich, verified professional profiles in seconds
           </p>

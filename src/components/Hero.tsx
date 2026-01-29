@@ -40,7 +40,7 @@ export default function Hero() {
           animate="visible"
           className="flex flex-col items-center"
         >
-          
+
 
           <motion.h1
             variants={itemVariants}
@@ -48,7 +48,7 @@ export default function Hero() {
           >
             <span className="text-white">Lead Generation</span>
             <br />
-<span className="
+            <span className="
   bg-gradient-to-r from-amber-300 via-amber-500 to-amber-700
   bg-clip-text text-transparent
   drop-shadow-[0_0_6px_rgba(255,191,0,0.35)]

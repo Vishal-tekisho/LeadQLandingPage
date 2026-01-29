@@ -39,50 +39,50 @@ function App() {
       <SkipToContent />
       <ScrollProgress />
       <NavBar items={navItems} />
-      
+
       {/* 1. Hero Section */}
       <Hero />
-      
+
       {/* 2. Features */}
       <Features />
-      
+
       {/* 3. Use Cases */}
       <UseCases />
-      
+
       {/* 4. Lead Capture Stream */}
       <LeadCaptureStream />
-      
+
       {/* 5. Profile Enrichment (Placeholder) */}
       <ProfileEnrichment />
-      
+
       {/* 6. Living Dashboard Preview */}
       <DashboardPreview />
-      
+
       {/* 7. Bookings & Meeting Diarization (Placeholder) */}
       <BookingsMeeting />
-      
+
       {/* 8. Email Draft Animation */}
       <section id="email-draft">
         <EmailDraftAnimation />
       </section>
-      
+
       {/* 9. AI Agents */}
       <Agents />
-      
+
       {/* 10. Pricing */}
       <Pricing />
-      
+
       {/* 11. FAQ */}
       <FAQ />
-      
+
       {/* 12. Get in Touch / Contact */}
       <Contact />
-      
+
       <ScrollToTop />
       <CookieConsent />
 
       {/* Footer */}
-      <footer className="relative z-10 border-t border-white/10 py-8 px-4">
+      <footer className="relative z-10 py-8 px-4">
         <div className="max-w-7xl mx-auto text-center text-gray-300">
           <p>&copy; 2026 LeadQ.AI. All rights reserved.</p>
         </div>
