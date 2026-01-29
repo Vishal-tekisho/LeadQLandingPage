@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import EnergyBeam from './ui/energy-beam';
 
 // Toggle to enable/disable the energy beam animation
-const ENABLE_ENERGY_BEAM = false;
+const ENABLE_ENERGY_BEAM = true;
 
 export default function Hero() {
   const containerVariants = {
