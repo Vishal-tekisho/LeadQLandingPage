@@ -59,7 +59,7 @@ const Features = () => {
   };
 
   return (
-    <section id="features" className="relative z-10 py-24 px-4">
+    <section id="features" className="relative z-10 py-16 sm:py-20 md:py-24 px-4">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -68,10 +68,10 @@ const Features = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-4">
             What Makes LeadQ Different
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
             Not just another CRM. A complete AI workforce that works while you focus on closing deals.
           </p>
         </motion.div>
@@ -81,7 +81,7 @@ const Features = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
         >
           {features.map((feature, index) => {
             const Icon = feature.icon;
@@ -93,7 +93,7 @@ const Features = () => {
                 key={index}
                 variants={cardVariants}
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                className="glass p-8 rounded-2xl relative overflow-hidden group"
+                className="glass p-5 sm:p-6 md:p-8 rounded-2xl relative overflow-hidden group"
               >
                 {/* Gradient border effect on hover */}
                 <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-leadq-amber/20 via-transparent to-transparent" />

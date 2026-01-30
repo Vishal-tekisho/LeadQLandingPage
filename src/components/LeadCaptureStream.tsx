@@ -126,9 +126,9 @@ function PhoneScannerOverlay({
                 {/* Scan line animation */}
                 {isScanning && (
                   <div className="absolute inset-x-0 top-0 h-full overflow-hidden rounded-xl pointer-events-none">
-                    <div 
+                    <div
                       className="absolute inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-leadq-amber to-transparent"
-                      style={{ animation: 'scanLine 1s ease-in-out infinite' }} 
+                      style={{ animation: 'scanLine 1s ease-in-out infinite' }}
                     />
                   </div>
                 )}
@@ -213,7 +213,7 @@ function PhoneScannerOverlay({
 export default function LeadCaptureStream() {
   const [lottieError, setLottieError] = useState(false);
   const [lottieLoaded, setLottieLoaded] = useState(false);
-  
+
   // Interactive state
   const [currentLeadIndex, setCurrentLeadIndex] = useState(0);
   const [isScanning, setIsScanning] = useState(false);
@@ -234,7 +234,7 @@ export default function LeadCaptureStream() {
     if (isScanning) return;
     setIsScanning(true);
     setShowEnriched(false);
-    
+
     // Show raw data first, then switch to enriched after scan completes
     setTimeout(() => {
       setCurrentLeadIndex((prev) => (prev + 1) % fallbackCards.length);
@@ -262,7 +262,7 @@ export default function LeadCaptureStream() {
   const currentLead = fallbackCards[currentLeadIndex];
 
   return (
-    <section id="lead-capture" className="relative z-10 py-24 px-4 overflow-hidden">
+    <section id="lead-capture" className="relative z-10 py-16 sm:py-20 md:py-24 px-4 overflow-hidden">
       <style>{`
         @keyframes scanLine {
           0%, 100% { top: 0; opacity: 1; }
@@ -279,13 +279,13 @@ export default function LeadCaptureStream() {
           <span className="glass px-4 py-2 rounded-full text-sm font-medium text-leadq-amber border border-leadq-amber/20 inline-block mb-6">
             AI-Powered Universal Lead Capture
           </span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-4">
             Turn Every Scan Into Revenue
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
+          <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto mb-6 sm:mb-8">
             Scan conference badges, business cards, LinkedIn QR codes, and more - instantly validate, qualify, enrich, and sync.
           </p>
-          
+
           {/* Scan Now Button */}
           <button
             onClick={handleScanClick}
@@ -293,8 +293,8 @@ export default function LeadCaptureStream() {
             className={`
               inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm
               transition-all duration-300 transform
-              ${isScanning 
-                ? 'bg-leadq-amber/20 text-leadq-amber/50 cursor-not-allowed scale-95' 
+              ${isScanning
+                ? 'bg-leadq-amber/20 text-leadq-amber/50 cursor-not-allowed scale-95'
                 : 'bg-gradient-to-r from-amber-500 to-amber-600 text-black hover:from-amber-400 hover:to-amber-500 hover:scale-105 shadow-lg shadow-amber-500/25'
               }
             `}
@@ -305,7 +305,7 @@ export default function LeadCaptureStream() {
           </button>
         </div>
 
-        <div className="relative w-full h-[500px] flex items-center justify-center">
+        <div className="relative w-full h-[400px] sm:h-[450px] md:h-[500px] flex items-center justify-center">
           <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-leadq-bg to-transparent z-30 pointer-events-none" />
           <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-leadq-bg to-transparent z-30 pointer-events-none" />
 

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react"
-import { motion } from "framer-motion"
-import { LucideIcon, Sparkles, Briefcase, ScanLine, UserPlus, LayoutDashboard, Calendar, PenLine, Bot, DollarSign, HelpCircle, Mail } from "lucide-react"
+import { useEffect, useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { LucideIcon, Sparkles, Briefcase, ScanLine, UserPlus, LayoutDashboard, Calendar, PenLine, Bot, DollarSign, HelpCircle, Mail, Menu as MenuIcon, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Menu, MenuItem, MenuLink, MenuSection } from "./navbar-menu"
 
@@ -68,17 +68,7 @@ function getActiveNavElement(activeTab: string): ActiveNavElement {
 export function NavBar({ items, className }: NavBarProps) {
   const [activeTab, setActiveTab] = useState(items[0]?.name || "")
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-
-    handleResize()
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   // Intersection Observer to update active tab on scroll
   useEffect(() => {
@@ -115,7 +105,25 @@ export function NavBar({ items, className }: NavBarProps) {
   const handleLinkClick = (name: string) => {
     setActiveTab(name)
     setActiveMenu(null)
+    setMobileMenuOpen(false)
   }
+
+  // Toggle mobile menu
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen)
+  }
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [mobileMenuOpen])
 
   const activeNavElement = getActiveNavElement(activeTab)
 
@@ -139,14 +147,21 @@ export function NavBar({ items, className }: NavBarProps) {
     </motion.div>
   )
 
+  // All navigation items combined for mobile
+  const allNavItems = [
+    ...menuGroups.platform.items,
+    ...menuGroups.solutions.items,
+    ...directLinks
+  ]
+
   return (
     <div
       className={cn(
-        "fixed top-0 left-0 w-full z-[100] pt-6 px-4",
+        "fixed top-0 left-0 w-full z-[100] pt-4 md:pt-6 px-4",
         className
       )}
     >
-      {/* Login & Sign Up Buttons */}
+      {/* Login & Sign Up Buttons - Desktop */}
       <div className="hidden lg:flex items-center gap-3 fixed top-4 right-4 z-[101]">
         <button className="px-5 py-2.5 text-sm text-white underline underline-offset-4 hover:text-leadq-amber transition-colors rounded-lg focus:outline-none focus:ring-2 focus:ring-leadq-amber focus:ring-offset-2 focus:ring-offset-black whitespace-nowrap">
           Login
@@ -157,7 +172,77 @@ export function NavBar({ items, className }: NavBarProps) {
         </button>
       </div>
 
-      <div className="max-w-4xl mx-auto flex items-center justify-center">
+      {/* Mobile Header with Hamburger */}
+      <div className="md:hidden flex items-center justify-between">
+        <a href="#" className="text-xl font-display font-bold">
+          <span className="text-white">Lead</span>
+          <span className="text-leadq-amber">Q</span>
+          <span className="text-white">.AI</span>
+        </a>
+        <button
+          onClick={toggleMobileMenu}
+          className="p-3 text-white hover:text-leadq-amber transition-colors rounded-lg focus:outline-none focus:ring-2 focus:ring-leadq-amber"
+          aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={mobileMenuOpen}
+        >
+          {mobileMenuOpen ? <X size={24} /> : <MenuIcon size={24} />}
+        </button>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden fixed inset-0 top-16 bg-black/95 backdrop-blur-xl z-[99] overflow-y-auto"
+          >
+            <div className="px-4 py-6 space-y-2">
+              {/* All Navigation Items */}
+              {allNavItems.map((item) => {
+                const Icon = item.icon
+                const isActive = activeTab === item.name
+                return (
+                  <a
+                    key={item.name}
+                    href={item.url}
+                    onClick={() => handleLinkClick(item.name)}
+                    className={cn(
+                      "flex items-center gap-4 px-4 py-4 rounded-xl transition-all",
+                      isActive
+                        ? "bg-leadq-amber/10 text-leadq-amber border border-leadq-amber/30"
+                        : "text-gray-300 hover:bg-white/5 hover:text-white"
+                    )}
+                  >
+                    <div className={cn(
+                      "w-10 h-10 rounded-lg flex items-center justify-center",
+                      isActive ? "bg-leadq-amber/20" : "bg-white/10"
+                    )}>
+                      <Icon size={20} strokeWidth={2} />
+                    </div>
+                    <span className="text-base font-medium">{item.name}</span>
+                  </a>
+                )
+              })}
+
+              {/* Mobile Login & Sign Up */}
+              <div className="pt-6 mt-6 border-t border-white/10 space-y-3">
+                <button className="w-full px-4 py-4 text-white hover:text-leadq-amber hover:bg-white/5 rounded-xl transition-colors text-base font-medium">
+                  Login
+                </button>
+                <button className="w-full px-4 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-leadq-amber to-amber-600 hover:from-amber-400 hover:to-amber-500 shadow-lg shadow-amber-500/25 transition-all text-base">
+                  Sign Up
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Desktop Navigation */}
+      <div className="hidden md:flex max-w-4xl mx-auto items-center justify-center">
         {/* Navigation Items */}
         <div className="flex items-center bg-black/60 border border-white/10 backdrop-blur-xl py-1.5 px-2 rounded-full shadow-lg">
           <Menu setActive={setActiveMenu}>

@@ -71,7 +71,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative z-10 py-24 px-4 bg-white/[0.02]">
+    <section id="contact" className="relative z-10 py-16 sm:py-20 md:py-24 px-4 bg-white/[0.02]">
       <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -80,10 +80,10 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-4">
             Get in Touch
           </h2>
-          <p className="text-xl text-gray-300">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300">
             Have questions? We'd love to hear from you.
           </p>
         </motion.div>
@@ -93,7 +93,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="glass rounded-2xl p-8 md:p-10"
+          className="glass rounded-2xl p-6 sm:p-8 md:p-10"
         >
           {formState === 'success' ? (
             <motion.div
@@ -118,11 +118,10 @@ export default function Contact() {
                   id="name"
                   value={formData.name}
                   onChange={(e) => handleChange('name', e.target.value)}
-                  className={`w-full glass px-4 py-3 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 transition-all ${
-                    errors.name
+                  className={`w-full glass px-4 py-3 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 transition-all ${errors.name
                       ? 'ring-2 ring-red-400'
                       : 'focus:ring-amber-500 focus:shadow-lg focus:shadow-amber-500/20'
-                  }`}
+                    }`}
                   placeholder="John Doe"
                   disabled={formState === 'sending'}
                   aria-describedby={errors.name ? 'name-error' : undefined}
@@ -144,11 +143,10 @@ export default function Contact() {
                   id="email"
                   value={formData.email}
                   onChange={(e) => handleChange('email', e.target.value)}
-                  className={`w-full glass px-4 py-3 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 transition-all ${
-                    errors.email
+                  className={`w-full glass px-4 py-3 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 transition-all ${errors.email
                       ? 'ring-2 ring-red-400'
                       : 'focus:ring-amber-500 focus:shadow-lg focus:shadow-amber-500/20'
-                  }`}
+                    }`}
                   placeholder="john@company.com"
                   disabled={formState === 'sending'}
                   aria-describedby={errors.email ? 'email-error' : undefined}
@@ -185,11 +183,10 @@ export default function Contact() {
                   value={formData.message}
                   onChange={(e) => handleChange('message', e.target.value)}
                   rows={5}
-                  className={`w-full glass px-4 py-3 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 transition-all resize-none ${
-                    errors.message
+                  className={`w-full glass px-4 py-3 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 transition-all resize-none ${errors.message
                       ? 'ring-2 ring-red-400'
                       : 'focus:ring-amber-500 focus:shadow-lg focus:shadow-amber-500/20'
-                  }`}
+                    }`}
                   placeholder="Tell us about your needs..."
                   disabled={formState === 'sending'}
                   aria-describedby={errors.message ? 'message-error' : undefined}
@@ -207,11 +204,10 @@ export default function Contact() {
                 disabled={formState === 'sending'}
                 whileHover={formState === 'idle' ? { scale: 1.02 } : {}}
                 whileTap={formState === 'idle' ? { scale: 0.98 } : {}}
-                className={`w-full py-4 rounded-lg font-bold text-lg transition-all flex items-center justify-center gap-2 ${
-                  formState === 'sending'
+                className={`w-full py-4 rounded-lg font-bold text-lg transition-all flex items-center justify-center gap-2 ${formState === 'sending'
                     ? 'glass cursor-not-allowed text-gray-400'
                     : 'bg-gradient-to-r from-black to-amber-600 text-white hover:shadow-xl hover:shadow-amber-600/50'
-                }`}
+                  }`}
               >
                 {formState === 'sending' ? (
                   <>

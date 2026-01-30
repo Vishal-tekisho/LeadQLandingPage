@@ -52,7 +52,7 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="relative z-10 py-24 px-4">
+    <section id="faq" className="relative z-10 py-16 sm:py-20 md:py-24 px-4">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -61,7 +61,7 @@ export default function FAQ() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-4">
             Frequently Asked Questions
           </h2>
         </motion.div>

@@ -94,10 +94,10 @@ const UseCases = () => {
   };
 
   return (
-    <section id="use-cases" className="relative z-10 py-24 px-4 overflow-hidden">
+    <section id="use-cases" className="relative z-10 py-16 sm:py-20 md:py-24 px-4 overflow-hidden">
       {/* Background gradient effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-leadq-amber/5 to-transparent pointer-events-none" />
-      
+
       <div className="max-w-7xl mx-auto relative">
         {/* Section Header */}
         <motion.div
@@ -118,14 +118,14 @@ const UseCases = () => {
             <span className="text-sm font-medium text-gray-300">Built for Every Industry</span>
           </motion.div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
             Real Teams,{' '}
             <span className="bg-gradient-to-r from-leadq-amber via-leadq-cyan to-leadq-purple bg-clip-text text-transparent">
               Real Results
             </span>
           </h2>
-          
-          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
+
+          <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
             See how LeadQ transforms lead management across industries, from real estate to SaaS sales
           </p>
         </motion.div>
@@ -144,7 +144,7 @@ const UseCases = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                whileHover={{ 
+                whileHover={{
                   scale: 1.03,
                   transition: { duration: 0.2 }
                 }}
@@ -152,7 +152,7 @@ const UseCases = () => {
               >
                 {/* Gradient background glow */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${useCase.gradient} rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl`} />
-                
+
                 {/* Card content */}
                 <div className="relative glass rounded-2xl border border-white/10 p-6 h-full flex flex-col group-hover:glass-strong transition-all duration-300">
                   {/* Icon */}
@@ -166,7 +166,7 @@ const UseCases = () => {
                   <h3 className="text-xl font-display font-bold mb-3 group-hover:text-white transition-colors">
                     {useCase.title}
                   </h3>
-                  
+
                   <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
                     {useCase.description}
                   </p>

@@ -140,7 +140,7 @@ export default function DashboardPreview() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-4xl md:text-5xl font-display font-bold mb-6"
+        className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-4 sm:mb-6"
       >
         A Living Dashboard
       </motion.h2>
@@ -149,7 +149,7 @@ export default function DashboardPreview() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="text-xl text-gray-300"
+        className="text-base sm:text-lg md:text-xl text-gray-300"
       >
         Watch your pipeline fill up in real-time.
       </motion.p>
@@ -187,8 +187,8 @@ export default function DashboardPreview() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: index * 0.1 }}
                         className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all cursor-pointer ${isActive
-                            ? 'bg-gradient-to-r from-leadq-amber/20 to-leadq-amber-dark/20 border border-leadq-amber/30 text-white'
-                            : 'text-gray-400 hover:bg-white/5 hover:text-gray-300'
+                          ? 'bg-gradient-to-r from-leadq-amber/20 to-leadq-amber-dark/20 border border-leadq-amber/30 text-white'
+                          : 'text-gray-400 hover:bg-white/5 hover:text-gray-300'
                           }`}
                       >
                         <Icon size={18} strokeWidth={2} />
@@ -385,8 +385,8 @@ export default function DashboardPreview() {
                                   <span className="text-white font-medium">{agent.name}</span>
                                 </div>
                                 <span className={`text-xs px-2 py-1 rounded-full ${agent.status === 'Active'
-                                    ? 'bg-green-500/20 text-green-400'
-                                    : 'bg-yellow-500/20 text-yellow-400'
+                                  ? 'bg-green-500/20 text-green-400'
+                                  : 'bg-yellow-500/20 text-yellow-400'
                                   }`}>
                                   {agent.status}
                                 </span>

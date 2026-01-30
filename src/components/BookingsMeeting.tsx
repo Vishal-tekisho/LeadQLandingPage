@@ -202,7 +202,7 @@ export default function BookingsMeeting() {
   // No auto-start - animations are triggered on demand via play button
 
   return (
-    <section id="bookings-meeting" className="relative z-10 py-24 px-4 bg-white/[0.02]">
+    <section id="bookings-meeting" className="relative z-10 py-16 sm:py-20 md:py-24 px-4 bg-white/[0.02]">
       {/* Background ambient effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
@@ -224,14 +224,14 @@ export default function BookingsMeeting() {
             </span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-4">
             Bookings & Meeting{' '}
             <span className="bg-gradient-to-r from-cyan-400 to-amber-400 bg-clip-text text-transparent">
               Intelligence
             </span>
           </h2>
 
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
+          <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-6 sm:mb-8">
             Seamless scheduling, real-time transcription with speaker diarization, and AI-powered meeting summaries
           </p>
 
@@ -278,7 +278,7 @@ export default function BookingsMeeting() {
             </div>
 
             {/* Animation Content */}
-            <div className="p-6 md:p-8 min-h-[480px]">
+            <div className="p-4 sm:p-6 md:p-8 min-h-[400px] sm:min-h-[480px]">
               <AnimatePresence mode="wait">
                 {/* IDLE STATE */}
                 {stage === 'idle' && (
@@ -816,8 +816,8 @@ export default function BookingsMeeting() {
                       <button
                         onClick={() => setDashboardView('upcoming')}
                         className={`flex-1 px-4 py-2 rounded-md text-sm font-medium transition-all ${dashboardView === 'upcoming'
-                            ? 'bg-cyan-500 text-white'
-                            : 'text-gray-400 hover:text-white'
+                          ? 'bg-cyan-500 text-white'
+                          : 'text-gray-400 hover:text-white'
                           }`}
                       >
                         <Clock className="w-4 h-4 inline mr-2" />
@@ -826,8 +826,8 @@ export default function BookingsMeeting() {
                       <button
                         onClick={() => setDashboardView('completed')}
                         className={`flex-1 px-4 py-2 rounded-md text-sm font-medium transition-all ${dashboardView === 'completed'
-                            ? 'bg-green-500 text-white'
-                            : 'text-gray-400 hover:text-white'
+                          ? 'bg-green-500 text-white'
+                          : 'text-gray-400 hover:text-white'
                           }`}
                       >
                         <CheckCircle2 className="w-4 h-4 inline mr-2" />
@@ -858,8 +858,8 @@ export default function BookingsMeeting() {
                             >
                               <div className="flex items-center gap-3">
                                 <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm ${meeting.status === 'upcoming'
-                                    ? 'bg-gradient-to-br from-cyan-400 to-blue-500'
-                                    : 'bg-gradient-to-br from-green-400 to-emerald-500'
+                                  ? 'bg-gradient-to-br from-cyan-400 to-blue-500'
+                                  : 'bg-gradient-to-br from-green-400 to-emerald-500'
                                   }`}>
                                   {meeting.avatar}
                                 </div>

@@ -81,7 +81,7 @@ const Pricing = () => {
   };
 
   return (
-    <section id="pricing" className="relative z-10 py-24 px-4">
+    <section id="pricing" className="relative z-10 py-16 sm:py-20 md:py-24 px-4">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -90,10 +90,10 @@ const Pricing = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-4">
             Choose Your Plan
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
             Pay per action, not per seat. Scale with confidence.
           </p>
         </motion.div>
@@ -103,16 +103,15 @@ const Pricing = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid lg:grid-cols-3 gap-8 mb-12"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12"
         >
           {plans.map((plan, index) => (
             <motion.div
               key={index}
               variants={cardVariants}
               whileHover={{ y: plan.popular ? 0 : -8, transition: { duration: 0.3 } }}
-              className={`glass rounded-2xl p-8 relative ${
-                plan.popular ? 'scale-105 border-2 border-leadq-amber/30 shadow-[0_0_30px_rgba(245,158,11,0.2)]' : ''
-              }`}
+              className={`glass rounded-2xl p-6 sm:p-8 relative ${plan.popular ? 'md:scale-105 border-2 border-leadq-amber/30 shadow-[0_0_30px_rgba(245,158,11,0.2)]' : ''
+                }`}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">

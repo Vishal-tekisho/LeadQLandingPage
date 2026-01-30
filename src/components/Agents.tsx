@@ -72,7 +72,7 @@ const agents = [
 
 export default function Agents() {
   return (
-    <section id="agents" className="relative z-10 py-24 px-4 bg-white/[0.02]">
+    <section id="agents" className="relative z-10 py-16 sm:py-20 md:py-24 px-4 bg-white/[0.02]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <motion.h2
@@ -80,7 +80,7 @@ export default function Agents() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl font-display font-bold mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-6"
           >
             Meet Your New Workforce
           </motion.h2>
@@ -89,13 +89,13 @@ export default function Agents() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-xl text-gray-300 max-w-3xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto"
           >
             Deploy specialized AI agents for every stage of your sales cycle.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {agents.map((agent, index) => {
             const Icon = agent.icon;
             const colorClass = 'leadq-amber';
@@ -113,11 +113,10 @@ export default function Agents() {
                   rotateY: 5,
                   transition: { duration: 0.3 },
                 }}
-                className={`group relative glass rounded-2xl p-6 hover:glass-strong transition-all ${
-                  agent.highlight
+                className={`group relative glass rounded-2xl p-6 hover:glass-strong transition-all ${agent.highlight
                     ? 'bg-gradient-to-br from-leadq-amber/5 to-leadq-amber-dark/10'
                     : ''
-                }`}
+                  }`}
                 style={{ transformStyle: 'preserve-3d' }}
               >
                 <div

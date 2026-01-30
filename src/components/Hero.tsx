@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import EnergyBeam from './ui/energy-beam';
 
 // Toggle to enable/disable the energy beam animation
-const ENABLE_ENERGY_BEAM = true;
+const ENABLE_ENERGY_BEAM = false;
 
 export default function Hero() {
   const containerVariants = {
@@ -26,7 +26,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="main-content" className="relative z-10 min-h-screen flex items-center justify-center overflow-hidden px-4 py-20">
+    <section id="main-content" className="relative z-10 min-h-screen flex items-center justify-center overflow-hidden px-4 py-16 sm:py-20 pt-24 sm:pt-20">
       {ENABLE_ENERGY_BEAM && (
         <div className="absolute inset-0 z-0">
           <EnergyBeam className="opacity-60" />
@@ -44,7 +44,7 @@ export default function Hero() {
 
           <motion.h1
             variants={itemVariants}
-            className="text-6xl md:text-7xl font-bold uppercase tracking-tighter mb-6 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase tracking-tighter mb-4 sm:mb-6 leading-tight"
           >
             <span className="text-white">Lead Generation</span>
             <br />
@@ -59,7 +59,7 @@ export default function Hero() {
 
           <motion.p
             variants={itemVariants}
-            className="text-lg md:text-xl text-gray-400 max-w-2xl"
+            className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl px-4 sm:px-0"
           >
             Supercharge productivity with AI-powered automation and integrations built for the next generation of teams.
           </motion.p>

@@ -192,13 +192,12 @@ const StageIndicator = ({
 
   return (
     <motion.div
-      className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-        isActive
+      className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${isActive
           ? 'bg-amber-500/20 text-amber-400 border border-amber-500/30'
           : isComplete
-          ? 'bg-green-500/20 text-green-400 border border-green-500/30'
-          : 'bg-white/5 text-gray-500 border border-white/10'
-      }`}
+            ? 'bg-green-500/20 text-green-400 border border-green-500/30'
+            : 'bg-white/5 text-gray-500 border border-white/10'
+        }`}
       animate={isActive ? { scale: [1, 1.02, 1] } : {}}
       transition={{ duration: 1.5, repeat: Infinity }}
     >
@@ -250,20 +249,18 @@ const InclusionToggle = ({
     initial={{ opacity: 0, x: 20 }}
     animate={{ opacity: 1, x: 0 }}
     transition={{ delay, duration: 0.3 }}
-    className={`flex items-center justify-between p-2 rounded-lg border transition-all ${
-      enabled
+    className={`flex items-center justify-between p-2 rounded-lg border transition-all ${enabled
         ? 'bg-amber-500/10 border-amber-500/30'
         : 'bg-white/5 border-white/10 opacity-50'
-    }`}
+      }`}
   >
     <div className="flex items-center gap-2">
       <div className={enabled ? 'text-amber-400' : 'text-gray-500'}>{icon}</div>
       <span className="text-xs text-gray-300">{label}</span>
     </div>
     <div
-      className={`w-8 h-4 rounded-full relative transition-colors ${
-        enabled ? 'bg-amber-500' : 'bg-gray-600'
-      }`}
+      className={`w-8 h-4 rounded-full relative transition-colors ${enabled ? 'bg-amber-500' : 'bg-gray-600'
+        }`}
     >
       <motion.div
         className="absolute top-0.5 w-3 h-3 rounded-full bg-white shadow"
@@ -341,7 +338,7 @@ export default function EmailDraftAnimation() {
     const runSequence = async () => {
       // Stage 1: Contact Retrieval (2s)
       setCurrentStage('contact');
-      
+
       timeouts.push(setTimeout(() => {
         setEmailSubject(`Following Up: ${MOCK_CONTACT.meetingType} Discussion`);
       }, 1000));
@@ -400,7 +397,7 @@ export default function EmailDraftAnimation() {
   };
 
   return (
-    <section className="py-20 px-4 relative overflow-hidden">
+    <section className="py-16 sm:py-20 px-4 relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/10 rounded-full blur-[120px]" />
@@ -443,11 +440,10 @@ export default function EmailDraftAnimation() {
           {/* Play/Pause Button */}
           <motion.button
             onClick={handlePlayPause}
-            className={`flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-all ${
-              isPlaying
+            className={`flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-all ${isPlaying
                 ? 'bg-white/10 text-white border border-white/20'
                 : 'bg-gradient-to-r from-amber-500 to-amber-600 text-black'
-            }`}
+              }`}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
@@ -671,11 +667,10 @@ export default function EmailDraftAnimation() {
                           className="relative"
                         >
                           <div
-                            className={`relative overflow-hidden rounded-xl ${
-                              currentStage === 'complete'
+                            className={`relative overflow-hidden rounded-xl ${currentStage === 'complete'
                                 ? 'bg-gradient-to-r from-green-500 to-green-600'
                                 : 'bg-gradient-to-r from-amber-500 to-amber-600'
-                            }`}
+                              }`}
                           >
                             {/* Progress bar */}
                             {currentStage === 'delivery' && (
