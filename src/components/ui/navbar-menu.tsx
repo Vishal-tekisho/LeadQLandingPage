@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { LucideIcon } from "lucide-react";
 
 const transition = {
-    type: "spring",
+    type: "spring" as const,
     mass: 0.5,
     damping: 11.5,
     stiffness: 100,
@@ -18,15 +18,21 @@ export const MenuItem = ({
     item,
     icon: Icon,
     children,
+    wideDropdown = false,
 }: {
-    setActive: (item: string) => void;
+    setActive: (item: string | null) => void;
     active: string | null;
     item: string;
     icon?: LucideIcon;
     children?: React.ReactNode;
+    wideDropdown?: boolean;
 }) => {
     return (
-        <div onMouseEnter={() => setActive(item)} className="relative">
+        <div
+            onMouseEnter={() => setActive(item)}
+            onMouseLeave={() => setActive(null)}
+            className="relative"
+        >
             <motion.div
                 transition={{ duration: 0.3 }}
                 className="cursor-pointer text-gray-300 hover:text-leadq-amber flex items-center gap-2 px-4 py-2 text-sm font-semibold"
@@ -41,7 +47,10 @@ export const MenuItem = ({
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: 10 }}
                         transition={transition}
-                        className="absolute top-[calc(100%_+_0.5rem)] left-1/2 transform -translate-x-1/2 z-50"
+                        className={`absolute top-[calc(100%_+_0.5rem)] z-50 ${wideDropdown
+                            ? "left-0"
+                            : "left-1/2 transform -translate-x-1/2"
+                            }`}
                     >
                         <div className="bg-black backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl shadow-black/50 p-4">
                             {children}

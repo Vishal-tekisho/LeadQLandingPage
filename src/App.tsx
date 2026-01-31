@@ -43,28 +43,28 @@ function App() {
       {/* 1. Hero Section */}
       <Hero />
 
-      {/* 2. Features */}
-      <Features />
-
-      {/* 3. Use Cases */}
-      <UseCases />
-
-      {/* 4. Lead Capture Stream */}
+      {/* 2. Lead Capture Stream */}
       <LeadCaptureStream />
 
-      {/* 5. Profile Enrichment (Placeholder) */}
+      {/* 3. Profile Research */}
       <ProfileEnrichment />
 
-      {/* 6. Living Dashboard Preview */}
+      {/* 4. Dashboard Preview */}
       <DashboardPreview />
 
-      {/* 7. Bookings & Meeting Diarization (Placeholder) */}
+      {/* 5. Bookings & Meetings */}
       <BookingsMeeting />
 
-      {/* 8. Email Draft Animation */}
+      {/* 6. Email Draft Animation */}
       <section id="email-draft">
         <EmailDraftAnimation />
       </section>
+
+      {/* 7. Features */}
+      <Features />
+
+      {/* 8. Use Cases */}
+      <UseCases />
 
       {/* 9. AI Agents */}
       <Agents />
@@ -75,7 +75,7 @@ function App() {
       {/* 11. FAQ */}
       <FAQ />
 
-      {/* 12. Get in Touch / Contact */}
+      {/* 12. Contact */}
       <Contact />
 
       <ScrollToTop />

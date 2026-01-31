@@ -41,10 +41,22 @@ export default function Hero() {
           className="flex flex-col items-center"
         >
 
+          {/* Discover Excellence Badge */}
+          <motion.div
+            variants={itemVariants}
+            className="mb-6 sm:mb-8"
+          >
+            <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-amber-900/80 border border-leadq-amber shadow-lg shadow-amber-500/20">
+              <span className="text-sm sm:text-base font-bold tracking-widest uppercase text-amber-300">
+                Discover Excellence
+              </span>
+            </span>
+          </motion.div>
 
           <motion.h1
             variants={itemVariants}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase tracking-tighter mb-4 sm:mb-6 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase tracking-wide mb-4 sm:mb-6 leading-tight"
+            style={{ fontFamily: "'Orbitron', sans-serif" }}
           >
             <span className="text-white">Lead Generation</span>
             <br />
@@ -63,6 +75,7 @@ export default function Hero() {
           >
             Supercharge productivity with AI-powered automation and integrations built for the next generation of teams.
           </motion.p>
+
         </motion.div>
       </div>
     </section>

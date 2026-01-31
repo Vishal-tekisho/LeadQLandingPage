@@ -17,20 +17,14 @@ interface NavBarProps {
 
 // Group definitions for dropdown menus
 const menuGroups = {
-  platform: {
-    label: "Platform",
-    icon: Sparkles,
-    items: [
-      { name: "Features", url: "#features", icon: Sparkles },
-    ]
-  },
   solutions: {
     label: "Solutions",
     icon: Briefcase,
     items: [
+      { name: "Features", url: "#features", icon: Sparkles },
       { name: "Use Cases", url: "#use-cases", icon: Briefcase },
       { name: "Lead Capture", url: "#lead-capture", icon: ScanLine },
-      { name: "Enrichment", url: "#profile-enrichment", icon: UserPlus },
+      { name: "Research", url: "#profile-research", icon: UserPlus },
       { name: "Dashboard", url: "#dashboard", icon: LayoutDashboard },
       { name: "Bookings", url: "#bookings-meeting", icon: Calendar },
       { name: "Email Draft", url: "#email-draft", icon: PenLine },
@@ -47,13 +41,9 @@ const directLinks = [
 ]
 
 // Determine which nav element is currently active based on activeTab
-type ActiveNavElement = "Platform" | "Solutions" | "Pricing" | "FAQ" | "Contact" | null
+type ActiveNavElement = "Solutions" | "Pricing" | "FAQ" | "Contact" | null
 
 function getActiveNavElement(activeTab: string): ActiveNavElement {
-  // Check if activeTab is in Platform group
-  if (menuGroups.platform.items.some(item => item.name === activeTab)) {
-    return "Platform"
-  }
   // Check if activeTab is in Solutions group
   if (menuGroups.solutions.items.some(item => item.name === activeTab)) {
     return "Solutions"
@@ -149,7 +139,6 @@ export function NavBar({ items, className }: NavBarProps) {
 
   // All navigation items combined for mobile
   const allNavItems = [
-    ...menuGroups.platform.items,
     ...menuGroups.solutions.items,
     ...directLinks
   ]
@@ -167,7 +156,7 @@ export function NavBar({ items, className }: NavBarProps) {
           Login
         </button>
 
-        <button className="px-6 py-2.5 text-sm rounded-lg font-semibold text-white bg-gradient-to-br from-leadq-amber to-amber-600 hover:from-amber-400 hover:to-amber-500 shadow-md shadow-amber-500/25 hover:shadow-lg hover:shadow-amber-500/45 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-black whitespace-nowrap">
+        <button className="px-6 py-2.5 text-sm rounded-lg font-semibold bg-gradient-to-r from-black to-amber-600 text-white shadow-[0_0_20px_rgba(217,119,6,0.5)] hover:shadow-[0_0_30px_rgba(217,119,6,0.7)] hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-black whitespace-nowrap">
           Sign Up
         </button>
       </div>
@@ -232,7 +221,7 @@ export function NavBar({ items, className }: NavBarProps) {
                 <button className="w-full px-4 py-4 text-white hover:text-leadq-amber hover:bg-white/5 rounded-xl transition-colors text-base font-medium">
                   Login
                 </button>
-                <button className="w-full px-4 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-leadq-amber to-amber-600 hover:from-amber-400 hover:to-amber-500 shadow-lg shadow-amber-500/25 transition-all text-base">
+                <button className="w-full px-4 py-4 rounded-xl font-semibold bg-gradient-to-r from-black to-amber-600 text-white shadow-[0_0_20px_rgba(217,119,6,0.5)] hover:shadow-[0_0_30px_rgba(217,119,6,0.7)] hover:scale-105 transition-all text-base">
                   Sign Up
                 </button>
               </div>
@@ -246,29 +235,7 @@ export function NavBar({ items, className }: NavBarProps) {
         {/* Navigation Items */}
         <div className="flex items-center bg-black/60 border border-white/10 backdrop-blur-xl py-1.5 px-2 rounded-full shadow-lg">
           <Menu setActive={setActiveMenu}>
-            {/* Platform Dropdown */}
-            <div className="relative">
-              <MenuItem
-                setActive={setActiveMenu}
-                active={activeMenu}
-                item="Platform"
-                icon={menuGroups.platform.icon}
-              >
-                <MenuSection>
-                  {menuGroups.platform.items.map((item) => (
-                    <MenuLink
-                      key={item.name}
-                      href={item.url}
-                      icon={item.icon}
-                      onClick={() => handleLinkClick(item.name)}
-                    >
-                      {item.name}
-                    </MenuLink>
-                  ))}
-                </MenuSection>
-              </MenuItem>
-              {activeNavElement === "Platform" && <LampEffect />}
-            </div>
+
 
             {/* Solutions Dropdown */}
             <div className="relative">
@@ -277,6 +244,7 @@ export function NavBar({ items, className }: NavBarProps) {
                 active={activeMenu}
                 item="Solutions"
                 icon={menuGroups.solutions.icon}
+                wideDropdown={true}
               >
                 <div className="flex gap-6">
                   <div className="w-[160px]">

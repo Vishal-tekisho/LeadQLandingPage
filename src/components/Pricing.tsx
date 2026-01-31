@@ -5,9 +5,9 @@ const Pricing = () => {
   const plans = [
     {
       name: 'Starter',
-      price: '$49',
+      price: '$4.99',
       period: '/month',
-      credits: '1,000 AI credits/month',
+      credits: '100 AI credits/month',
       features: [
         'Email Agent access',
         'Basic analytics',
@@ -21,9 +21,9 @@ const Pricing = () => {
     },
     {
       name: 'Pro',
-      price: '$100',
+      price: '$10',
       period: '/month',
-      credits: '5,000 AI credits/month',
+      credits: '500 AI credits/month',
       features: [
         'All Agents access',
         'Advanced analytics',
@@ -39,7 +39,6 @@ const Pricing = () => {
     },
     {
       name: 'Enterprise',
-      price: 'Custom',
       period: '',
       credits: 'Unlimited AI credits',
       features: [
