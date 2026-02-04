@@ -1,0 +1,18 @@
+{
+  "status": "commited",
+  "type": "frontend",
+  "scope": "codebase",
+  "localEndpoint": "http://localhost:5173",
+  "loginUser": "Vishal.Kakani@Tekisho.ai",
+  "loginPassword": "Pathfinder_697989",
+  "executionArgs": {
+    "projectName": "LeadQLandingPage",
+    "projectPath": "C:\\Users\\kakan\\OneDrive\\Desktop\\LQ landing page\\LeadQLandingPage",
+    "testIds": [],
+    "additionalInstruction": "",
+    "envs": {
+      "API_KEY": "sk-user-dHIqItrJizHdpq0ivPdTiA-ImvSc8DJS9fLfrPGPrY5RWl28PjR8DY9x7BF41p3kcIBtfglJ6pUUBAPU0mcsXYi6GuoaK-Lb1W_w3lDRXgtmpbnI1tgGh0IiEX3L8LwqqXo"
+    }
+  },
+  "proxy": "http://66e9fc32-34d4-4bd8-883d-4be2b6aa85e2:wpxzljkySY18S1U6YwqV3RdQlTt9uVwb@tun.testsprite.com:8080"
+}

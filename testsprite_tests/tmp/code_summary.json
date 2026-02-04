@@ -1,0 +1,163 @@
+{
+    "tech_stack": [
+        "TypeScript",
+        "React 18",
+        "Vite",
+        "TailwindCSS",
+        "Framer Motion",
+        "Lucide React Icons",
+        "Supabase",
+        "Lottie Animations"
+    ],
+    "features": [
+        {
+            "name": "Header/Navigation",
+            "description": "Main navigation header with tubelight navbar effect, hover dropdown menus, and responsive mobile menu",
+            "files": [
+                "src/components/Header.tsx",
+                "src/components/ui/tubelight-navbar.tsx",
+                "src/components/ui/navbar-menu.tsx"
+            ]
+        },
+        {
+            "name": "Hero Section",
+            "description": "Landing page hero section with animated headline, call-to-action buttons using glass and stardust button effects",
+            "files": [
+                "src/components/Hero.tsx",
+                "src/components/ui/glass-button.tsx",
+                "src/components/ui/stardust-button.tsx"
+            ]
+        },
+        {
+            "name": "Features Section",
+            "description": "Product features showcase with animated cards and icons displaying AI-powered lead generation capabilities",
+            "files": [
+                "src/components/Features.tsx"
+            ]
+        },
+        {
+            "name": "Lead Capture Stream",
+            "description": "Visual demonstration of real-time lead capture with animated stream visualization",
+            "files": [
+                "src/components/LeadCaptureStream.tsx"
+            ]
+        },
+        {
+            "name": "Email Draft Animation",
+            "description": "Interactive animation showing AI-powered email drafting capabilities with typing effects",
+            "files": [
+                "src/components/EmailDraftAnimation.tsx"
+            ]
+        },
+        {
+            "name": "Profile Research",
+            "description": "Component demonstrating AI profile research and enrichment capabilities",
+            "files": [
+                "src/components/ProfileResearch.tsx"
+            ]
+        },
+        {
+            "name": "Dashboard Preview",
+            "description": "Interactive preview of the product dashboard with container scroll animation",
+            "files": [
+                "src/components/DashboardPreview.tsx",
+                "src/components/ui/container-scroll.tsx"
+            ]
+        },
+        {
+            "name": "Workflow Section",
+            "description": "Visual workflow demonstration showing the lead generation process steps",
+            "files": [
+                "src/components/Workflow.tsx"
+            ]
+        },
+        {
+            "name": "AI Agents",
+            "description": "Showcase of different AI agent capabilities for lead generation",
+            "files": [
+                "src/components/Agents.tsx"
+            ]
+        },
+        {
+            "name": "Use Cases",
+            "description": "Different use case scenarios for the lead generation platform",
+            "files": [
+                "src/components/UseCases.tsx"
+            ]
+        },
+        {
+            "name": "Pricing Section",
+            "description": "Pricing plans display with feature comparison and CTAs",
+            "files": [
+                "src/components/Pricing.tsx"
+            ]
+        },
+        {
+            "name": "Testimonials",
+            "description": "Customer testimonials and social proof section",
+            "files": [
+                "src/components/Testimonials.tsx"
+            ]
+        },
+        {
+            "name": "FAQ Section",
+            "description": "Frequently asked questions with expandable accordion interface",
+            "files": [
+                "src/components/FAQ.tsx"
+            ]
+        },
+        {
+            "name": "Contact Section",
+            "description": "Contact form for user inquiries with form validation",
+            "files": [
+                "src/components/Contact.tsx"
+            ]
+        },
+        {
+            "name": "Bookings/Meeting Scheduler",
+            "description": "Meeting booking functionality integration",
+            "files": [
+                "src/components/BookingsMeeting.tsx"
+            ]
+        },
+        {
+            "name": "Final CTA",
+            "description": "Final call-to-action section at page bottom with energy beam effects",
+            "files": [
+                "src/components/FinalCTA.tsx",
+                "src/components/ui/energy-beam.tsx"
+            ]
+        },
+        {
+            "name": "Cookie Consent",
+            "description": "GDPR-compliant cookie consent banner with preferences management",
+            "files": [
+                "src/components/CookieConsent.tsx"
+            ]
+        },
+        {
+            "name": "UX Utilities",
+            "description": "Utility components for scroll progress, scroll-to-top, and accessibility features",
+            "files": [
+                "src/components/ScrollProgress.tsx",
+                "src/components/ScrollToTop.tsx",
+                "src/components/SkipToContent.tsx"
+            ]
+        },
+        {
+            "name": "Main App",
+            "description": "Root application component that assembles all sections into the landing page",
+            "files": [
+                "src/App.tsx",
+                "src/main.tsx"
+            ]
+        },
+        {
+            "name": "Styling",
+            "description": "Global styles and Tailwind CSS configuration",
+            "files": [
+                "src/index.css"
+            ]
+        }
+    ]
+}

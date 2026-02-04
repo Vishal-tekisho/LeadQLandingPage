@@ -1,0 +1,595 @@
+[
+  {
+    "id": "TC001",
+    "title": "Header navigation tubelight effect responsiveness",
+    "description": "Verify the header navigation displays the tubelight effect correctly and adjusts dynamically on various screen sizes including desktop and mobile.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Open the landing page on a desktop browser"
+      },
+      {
+        "type": "assertion",
+        "description": "Check that the tubelight effect is visible on the navigation bar"
+      },
+      {
+        "type": "action",
+        "description": "Resize the browser window to mobile dimensions"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the tubelight effect remains visible and consistent on the responsive navigation menu"
+      }
+    ]
+  },
+  {
+    "id": "TC002",
+    "title": "Navigation hover dropdowns functionality",
+    "description": "Ensure hovering over navigation items triggers dropdown menus and links are accessible.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Hover over each navigation menu item with dropdown capability"
+      },
+      {
+        "type": "assertion",
+        "description": "Check that the dropdown menu appears promptly and contains the correct options"
+      },
+      {
+        "type": "action",
+        "description": "Click on dropdown menu options"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify navigation to the appropriate linked pages or sections"
+      }
+    ]
+  },
+  {
+    "id": "TC003",
+    "title": "Responsive mobile menu toggle",
+    "description": "Validate the responsive menu toggles correctly on mobile devices and all menu options are accessible.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Access the landing page on a mobile device or emulated viewport"
+      },
+      {
+        "type": "action",
+        "description": "Tap the mobile menu hamburger icon"
+      },
+      {
+        "type": "assertion",
+        "description": "Check that the menu expands showing all navigation options"
+      },
+      {
+        "type": "action",
+        "description": "Tap the menu icon again or outside the menu area"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the menu collapses and is hidden"
+      }
+    ]
+  },
+  {
+    "id": "TC004",
+    "title": "Hero section animations functionality",
+    "description": "Check that the hero section animations including the animated headline and glass & stardust effect buttons display and perform smoothly.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Load the landing page and observe the hero section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the headline animates upon page load"
+      },
+      {
+        "type": "assertion",
+        "description": "Ensure the glass effect button displays with correct visual styling"
+      },
+      {
+        "type": "assertion",
+        "description": "Ensure the stardust effect button displays and animates correctly"
+      }
+    ]
+  },
+  {
+    "id": "TC005",
+    "title": "Hero section CTA button functionality",
+    "description": "Validate that call-to-action buttons in the hero section trigger the correct actions or navigation.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Click the glass effect CTA button"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm navigation or action is triggered as per specification"
+      },
+      {
+        "type": "action",
+        "description": "Click the stardust effect CTA button"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm navigation or action is triggered correctly"
+      }
+    ]
+  },
+  {
+    "id": "TC006",
+    "title": "Features section animated cards display",
+    "description": "Verify that product features are presented with animated cards and AI capability icons with smooth animations.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Scroll to the features section"
+      },
+      {
+        "type": "assertion",
+        "description": "Check each feature card animates on screen entry"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify all AI capability icons are visible and animate correctly"
+      }
+    ]
+  },
+  {
+    "id": "TC007",
+    "title": "Real-time lead capture stream visualization accuracy",
+    "description": "Ensure the real-time lead capture stream reflects simulated or live data accurately and animations run smoothly.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Observe the lead capture stream section after page load"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm stream animation flows without stutter or freeze"
+      },
+      {
+        "type": "assertion",
+        "description": "Validate data points in the visualization correspond to simulated lead capture data"
+      }
+    ]
+  },
+  {
+    "id": "TC008",
+    "title": "AI email draft animation interaction",
+    "description": "Confirm that the interactive AI email drafting animation with typing effects operates accurately and mimics real-time drafting.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Scroll to or navigate to the email drafting animation component"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the typing effects mimic AI drafting behavior smoothly"
+      },
+      {
+        "type": "assertion",
+        "description": "Ensure no typographic glitches or animation stalls occur"
+      }
+    ]
+  },
+  {
+    "id": "TC009",
+    "title": "Profile research AI demonstration correctness",
+    "description": "Verify the profile research and enrichment demo displays accurate and clear AI-driven profile enrichment steps or results.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the profile research section"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm demonstration visually shows enrichment steps"
+      },
+      {
+        "type": "assertion",
+        "description": "Ensure no UI glitches during animations or data display"
+      }
+    ]
+  },
+  {
+    "id": "TC010",
+    "title": "Dashboard preview scroll animation performance",
+    "description": "Validate the dashboard preview panel scroll animations are smooth and elements appear correctly during scroll interaction.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Scroll through the dashboard preview section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify smooth container scroll animations with no lag or jank"
+      },
+      {
+        "type": "assertion",
+        "description": "Check dashboard components render correctly on scroll"
+      }
+    ]
+  },
+  {
+    "id": "TC011",
+    "title": "Workflow section visual step demonstration accuracy",
+    "description": "Check the workflow section correctly shows lead generation steps with clear visuals and step transitions.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "View the workflow section"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm all lead generation steps are visually represented in order"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify smooth visual transition animations between steps"
+      }
+    ]
+  },
+  {
+    "id": "TC012",
+    "title": "AI agents capabilities showcase accuracy",
+    "description": "Verify the multiple AI agent capabilities are presented with accurate descriptions and animations.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Scroll to AI agents capability section"
+      },
+      {
+        "type": "assertion",
+        "description": "Check that all featured AI agents are displayed with correct icons and descriptions"
+      },
+      {
+        "type": "assertion",
+        "description": "Ensure animations for each agent run smoothly"
+      }
+    ]
+  },
+  {
+    "id": "TC013",
+    "title": "Use case scenarios correctness and clarity",
+    "description": "Ensure all use case scenarios are displayed clearly and accurately describing the product application.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the use cases section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify all use cases presented are relevant and accurate"
+      },
+      {
+        "type": "assertion",
+        "description": "Check UI clarity and absence of layout issues"
+      }
+    ]
+  },
+  {
+    "id": "TC014",
+    "title": "Pricing plans comparison and CTA functionality",
+    "description": "Validate pricing plans display accurate information and CTAs initiate expected actions.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Scroll to the pricing section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify pricing plans and feature comparison are visually clear and accurate"
+      },
+      {
+        "type": "action",
+        "description": "Click on each pricing plan's CTA button"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm that expected navigation or lead capture actions are triggered"
+      }
+    ]
+  },
+  {
+    "id": "TC015",
+    "title": "Customer testimonials section display and content accuracy",
+    "description": "Check that customer testimonials are displayed correctly with readable content and no UI overlaps.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "View the testimonials section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify all testimonials display their respective content and customer names"
+      },
+      {
+        "type": "assertion",
+        "description": "Check no text clipping or UI glitches occur"
+      }
+    ]
+  },
+  {
+    "id": "TC016",
+    "title": "FAQ accordion expansion and collapse behavior",
+    "description": "Ensure FAQ items expand and collapse smoothly without UI glitches and that only one or multiple accordions behave as intended.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Click on an FAQ question to expand answer"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the answer content expands smoothly below the question"
+      },
+      {
+        "type": "action",
+        "description": "Click the expanded FAQ question again"
+      },
+      {
+        "type": "assertion",
+        "description": "Ensure the answer section collapses without UI artifacts"
+      }
+    ]
+  },
+  {
+    "id": "TC017",
+    "title": "Contact form input validation and submission",
+    "description": "Validate the contact form properly enforces required fields, email format validation, and successfully submits inquiries.",
+    "category": "error handling",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Attempt to submit the contact form with empty fields"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify error messages prompt completion of required fields"
+      },
+      {
+        "type": "action",
+        "description": "Input invalid email format and attempt submit"
+      },
+      {
+        "type": "assertion",
+        "description": "Check appropriate email format error message appears"
+      },
+      {
+        "type": "action",
+        "description": "Fill all fields with valid data and submit the form"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm the form submits successfully and a confirmation message is shown"
+      }
+    ]
+  },
+  {
+    "id": "TC018",
+    "title": "Meeting booking integration functionality",
+    "description": "Ensure the meeting scheduler accepts bookings, validates user input, and confirms appointments appropriately.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Open the meeting booking feature section"
+      },
+      {
+        "type": "action",
+        "description": "Attempt to submit booking with missing required fields"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify validation prompts the user to complete all required information"
+      },
+      {
+        "type": "action",
+        "description": "Submit valid booking details"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm booking is processed and user receives confirmation feedback"
+      }
+    ]
+  },
+  {
+    "id": "TC019",
+    "title": "Final CTA button with energy beam effect engagement",
+    "description": "Check that the final call-to-action button with energy beam visual effect triggers expected actions and animations perform smoothly.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Scroll to the final CTA section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the energy beam visual effect animates correctly"
+      },
+      {
+        "type": "action",
+        "description": "Click the final CTA button"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm that the expected navigation or interaction occurs"
+      }
+    ]
+  },
+  {
+    "id": "TC020",
+    "title": "Cookie consent banner compliance and preferences storage",
+    "description": "Validate the GDPR-compliant cookie consent banner appears on first visit, allows preferences selection, and persists user choices.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Load the landing page on a fresh browser session without prior consent"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm the cookie consent banner is displayed"
+      },
+      {
+        "type": "action",
+        "description": "Select cookie preferences and accept"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify preferences are saved and banner disappears"
+      },
+      {
+        "type": "action",
+        "description": "Reload the page"
+      },
+      {
+        "type": "assertion",
+        "description": "Check that cookie banner does not appear again and preferences persist"
+      }
+    ]
+  },
+  {
+    "id": "TC021",
+    "title": "Scroll progress utility accuracy",
+    "description": "Ensure the scroll progress indicator accurately reflects user's position on the page.",
+    "category": "functional",
+    "priority": "Low",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Scroll through the landing page slowly"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the scroll progress bar updates continuously and proportionally to scroll position"
+      }
+    ]
+  },
+  {
+    "id": "TC022",
+    "title": "Scroll-to-top button visibility and functionality",
+    "description": "Check the scroll-to-top button appears after scrolling down and scrolls the user back to the top smoothly on click.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Scroll down the landing page sufficiently"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the scroll-to-top button becomes visible"
+      },
+      {
+        "type": "action",
+        "description": "Click the scroll-to-top button"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm the page scrolls smoothly back to the top"
+      }
+    ]
+  },
+  {
+    "id": "TC023",
+    "title": "Accessibility feature skip to content functionality",
+    "description": "Verify the skip to content link is accessible via keyboard navigation and directs focus to main content.",
+    "category": "accessibility",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Use keyboard tab navigation on page load"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm skip to content link is focused first"
+      },
+      {
+        "type": "action",
+        "description": "Activate the skip to content link using keyboard"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify keyboard focus moves to the main content area of the page"
+      }
+    ]
+  },
+  {
+    "id": "TC024",
+    "title": "UI performance under repeated user scrolling",
+    "description": "Test that all animations and UI components maintain smooth performance and responsiveness during rapid and repeated scrolling.",
+    "category": "performance",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Perform rapid repeated scrolling up and down through the entire landing page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify all animated components maintain consistent frame rates and no crashes occur"
+      }
+    ]
+  },
+  {
+    "id": "TC025",
+    "title": "Pricing plans feature comparison accuracy",
+    "description": "Validate that the feature comparison table accurately reflects the features included in each pricing tier.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the pricing section"
+      },
+      {
+        "type": "assertion",
+        "description": "Cross-verify features listed for each plan against the product documentation"
+      },
+      {
+        "type": "assertion",
+        "description": "Ensure visual indicators such as checkmarks correspond correctly to available features"
+      }
+    ]
+  }
+]
